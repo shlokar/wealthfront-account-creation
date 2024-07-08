@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { NavBar } from './nav-bar';
 
 interface Props {
   children: ReactNode;
@@ -7,13 +7,11 @@ interface Props {
 
 export function FlowLayout({ children }: Props) {
   return (
-    <div className="h-full mt-5 max-w-[1000px] mx-auto">
-      <div className="w-full text-right">
-        <Link to="/logout" reloadDocument>
-          Logout
-        </Link>
+    <div className="h-full mx-auto max-w-[1400px]">
+      <NavBar />
+      <div className="flex flex-col items-center">
+        {children}
       </div>
-      {children}
     </div>
   );
 }
